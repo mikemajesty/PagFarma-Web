@@ -15,6 +15,11 @@ gulp.task('dist', () => {
     .pipe(gulp.dest('dist/public'));
 });
 
+gulp.task('img', () => {
+  gulp.src('client/img/**.*')
+    .pipe(gulp.dest('dist/img'));
+});
+
 gulp.task('clean', () => {
   gulp.src(['dist/'], {
     read: false
