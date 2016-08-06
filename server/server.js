@@ -12,11 +12,6 @@ app.post('/user/create', (req, res) => {
       res.json(201);
 });
 
-// app.post('/user', (req, res) => {
-//   res.json({nome: "fulano", idade:28});
-// });
-//
-
 app.post('/login', (req, res) => {
   const userRequest = {login: req.body.login, password: req.body.password};
   serviceUser.findByLogin(userRequest).then((data) => {
