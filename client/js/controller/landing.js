@@ -1,5 +1,5 @@
 (angular => {
-  angular.module('PagFarma')
+  angular.module('Gs1')
 
   .controller('LandingCtrl', [LandingCtrl]);
 
