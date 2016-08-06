@@ -12,6 +12,9 @@
   "dependencies": {
     "body-parser": "^1.15.1",
     "bootstrap": "^3.3.6",
+    "pug": "^2.0.0-beta3",
+    "pg": "^6.0.1",
+    "pg-native": "^1.10.0",
     "bower": "^1.7.9",
     "browser-sync": "^2.14.0",
     "express": "^4.13.4",
@@ -22,6 +25,7 @@
     "gulp-live-server": "0.0.30",
     "gulp-pug": "^3.0.4",
     "gulp-rimraf": "^0.2.0",
+    "mysql": "^2.10.2",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0",
     "pug": "^2.0.0-beta3",
