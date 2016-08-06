@@ -1,7 +1,6 @@
 const Sequelize = require('sequelize');
-const pg = require('pg');
 
-var sequelize = new Sequelize('postgres://ppzvgaxsuchdme:f-QT4UzyvfDPz6P8OQVqTvbD5r@ec2-54-163-248-218.compute-1.amazonaws.com:5432/d8rt0l8qn0glta',{native: true,protocol: null});
+var sequelize = new Sequelize('postgres://pagfarma:pagfarma@localhost:5432/pagfarma');
 
 sequelize
   .authenticate().then((data) => {
