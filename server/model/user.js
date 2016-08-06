@@ -7,16 +7,6 @@ const User = sequelize.define('user', {
   password: Sequelize.STRING
 });
 
-
-
-
-sequelize.sync().then(() => {
-   return User.create({name:"teste",login: "admin", password: "admin"});
- }).then( (data) => {
-   console.log('entity was saved');
- });
-
 module.exports = {
-  User,
-  sequelize
+  User
 }
