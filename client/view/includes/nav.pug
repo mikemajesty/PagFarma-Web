@@ -1,0 +1,83 @@
+nav(ng-class="{'on': navToggle}" ng-model="navToggle" ng-value="false")
+  a.logo(href="")
+    img(src='../img/wella-logo.png' alt='logo da Wella')
+  a.btn-menu(ng-class="{'on' : navToggle}" ng-click="navToggle = !navToggle")
+    span
+    span
+    span
+  ul.internal-links
+    li.top-links
+      ul
+        li
+          a(href="https://www.wella.com/professional/pt-BR/search")
+        li
+          a(href="https://www.wella.com/professional/pt-BR/subscribe")
+        li
+          a(href="http://www.wella.com/professional/pt-BR/wella-store")
+    li.products
+      a(ng-click="productsToggle = !productsToggle")
+        | Products
+        span.fa.fa-angle-right
+      ul.inner-list(ng-class="{'on': productsToggle}" ng-model="productsToggle" ng-value="false")
+        li
+          a(href="http://www.wella.com/professional/pt-BR/products/color-multiproduct/koleston-perfect/dispatch" target="_blank") color perfect
+        li
+          a(href="http://www.wella.com/professional/pt-BR/products/color-multiproduct/blondor/dispatch" target="_blank") blondor
+        li
+          a(href="http://www.wella.com/professional/pt-BR/products/color/color-touch/dispatch" target="_blank") color touch
+        li
+          a(href="http://www.wella.com/professional/pt-BR/products/color/illumina-color/dispatch" target="_blank") illumina color
+        li
+          a(href="http://www.wella.com/professional/pt-BR/products/color/color-id/dispatch" target="_blank") color. id
+        li
+          a(href="http://www.wella.com/professional/pt-BR/products/care/dispatch/care-dispatch/CARECOLLECTIONS" target="_blank") wella care
+        li
+          a(href="http://www.wella.com/professional/pt-BR/products/styling/dispatch/styling-dispatch" target="_blank") styling
+    li
+      a(href='http://www.wella.com/professional/pt-BR/home' target="_blank")
+        | LookBook
+        span.fa.fa-angle-right
+    li
+      a(href='http://wellaeducation.com.br/pt-BR/seminars.aspx' target="_blank")
+        | Trendvision
+        span.fa.fa-angle-right
+    li
+      a(href='http://wellaeducation.com.br/pt-BR/seminars.aspx' target="_blank")
+        | Por Dentro da Wella
+        span.fa.fa-angle-right
+    li
+      a(href='http://wellaeducation.com.br/pt-BR/seminars.aspx' target="_blank")
+        | Suporte para o Salão
+        span.fa.fa-angle-right
+    li
+      a(href='http://wellaeducation.com.br/pt-BR/seminars.aspx' target="_blank")
+        | Histórias
+        span.fa.fa-angle-right
+
+    li.find-salon
+      a(href='http://wellaeducation.com.br/pt-BR/seminars.aspx' target="_blank")
+        | Find a Salon
+        span.fa.fa-map-marker
+        span.fa.fa-angle-right
+
+    li.social-links
+      p Follow Us
+      ul
+        li
+          a(href="https://www.facebook.com/WellaProfessionalsBrasil?brand_redir=164734120205273" target="_blank")
+            span.fa.fa-facebook
+        li
+          a(href="https://www.twitter.com/WellaHairUSA" target="_blank")
+            span.fa.fa-twitter
+        li
+          a(href="http://www.pinterest.com/wellapro/" target="_blank")
+            span.fa.fa-pinterest
+        li
+          a(href="https://www.youtube.com/channel/UCUJ2LRslojl668VgAQ6GBrg" target="_blank")
+            span.fa.fa-youtube
+        li
+          a(href="https://www.instagram.com/wellaprobrasil/" target="_blank")
+            span.fa.fa-instagram
+        li
+          a(href="http://www.wella.com/professional/en-EN/blog-gallery" target="_blank")
+            span.custom-icon

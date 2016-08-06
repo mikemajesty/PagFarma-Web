@@ -1,5 +1,5 @@
 doctype
-html.no-js(lang="pt-br", ng-app="Wella")
+html.no-js(lang="pt-br", ng-app="PagFarma")
   head
     meta(name="viewport", content="initial-scale=1")
     meta(charset="UTF-8")
@@ -8,12 +8,13 @@ html.no-js(lang="pt-br", ng-app="Wella")
     style.
       [ng-cloak], .ng-cloak { display: none; }
 
-    link(rel="stylesheet", href="/home/css/libs.css")
-    link(rel="stylesheet", href="/home/css/app.css")
+    link(rel="stylesheet", href="/css/libs.css")
+    link(rel="stylesheet", href="/css/app.css")
 
   body(ng-cloak)
     ng-view#main(autoscroll="true")
+      h1 hello mike
 
+    script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js")
     script(src="js/libs.min.js")
-    script(src="js/all.min.js")
     script(src="https://use.fontawesome.com/9d12e0976b.js")

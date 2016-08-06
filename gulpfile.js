@@ -7,6 +7,7 @@ const gulp = require('gulp'),
       sass = require('gulp-sass'),
       autoprefixer = require('gulp-autoprefixer'),
       pug = require('gulp-pug'),
+      browserSync = require('browser-sync').create(),
       babel = require('gulp-babel');
 
 gulp.task('dist', () => {
@@ -67,24 +68,31 @@ gulp.task('pug', () =>
     .pipe(gulp.dest('dist/'))
 );
 
-gulp.task('client:watch', () => {
-  gulp.watch('client/**/*.js', ['js']);
-  gulp.watch('client/**/*.js', ['sass']);
-  gulp.watch('client/**/*.pug', ['pug']);
+gulp.task('js', () => {
+
 });
 
 gulp.task('watch', () => {
-  const server = gls('server/server.js', {
-    env: {
-      NODE_ENV: 'development'
-    }
-  });
+  // const server = gls('server/server.js', {
+  //   env: {
+  //     NODE_ENV: 'development'
+  //   }
+  // });
 
-  gulp.watch('dist/**/*.{css,html,js}', (file) => {
-    server.notify.apply(server, [file]);
-  });
+  browserSync.init({
+       server: "dist/"
+   });
 
-  server.start.bind(server)();
+  gulp.watch('client/**/*.js', ['js']);
+  gulp.watch('client/**/*.js', ['sass']);
+  gulp.watch('client/**/*.pug', ['pug']);
+  gulp.watch('dist/**/*.{css,html,js}').on('change', browserSync.reload);
+
+  // gulp.watch('dist/**/*.{css,html,js}', (file) => {
+  //   // server.notify.apply(server, [file]);
+  // });
+  //
+  // //server.start.bind(server)();
 });
 
 
