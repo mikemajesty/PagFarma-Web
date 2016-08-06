@@ -1,0 +1,28 @@
+{
+  "esversion": 6,
+  "undef": true,
+  "unused": true,
+  "bitwise": false,
+  "eqeqeq": true,
+  "newcap": true,
+  "maxdepth": 2,
+  "globals": {
+    "angular": true,
+    "_": true,
+    "require": true,
+    "module": true,
+    "jQuery": true,
+    "console": true,
+    "FileReader": true,
+    "Image": true,
+    "Buffer": true,
+    "process": true,
+    "Promise": true,
+    "__dirname": true,
+    "PagarMeCheckout": true,
+    "document": true,
+    "google": true,
+    "setTimeout": true,
+    "XLS": true
+  }
+}
