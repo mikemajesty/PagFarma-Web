@@ -1,0 +1,19 @@
+doctype
+html.no-js(lang="pt-br", ng-app="Wella")
+  head
+    meta(name="viewport", content="initial-scale=1")
+    meta(charset="UTF-8")
+    title PagFarma
+
+    style.
+      [ng-cloak], .ng-cloak { display: none; }
+
+    link(rel="stylesheet", href="/home/css/libs.css")
+    link(rel="stylesheet", href="/home/css/app.css")
+
+  body(ng-cloak)
+    ng-view#main(autoscroll="true")
+
+    script(src="js/libs.min.js")
+    script(src="js/all.min.js")
+    script(src="https://use.fontawesome.com/9d12e0976b.js")
