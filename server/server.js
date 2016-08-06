@@ -2,25 +2,12 @@ const express = require('express');
 const app = express();
 const parser = require('body-parser');
 
-const serviceUser = require('./services/userService');
+const userRouter = require('./router/userRouter');
 
 app.use(parser());
 
-app.post('/user/create', (req, res) => {
-  const user = {login:req.body.login, password: req.body.password, name: req.body.name};
-      console.log(serviceUser.create(user));
-      res.json(201);
-});
-
-app.post('/login', (req, res) => {
-  const userRequest = {login: req.body.login, password: req.body.password};
-  serviceUser.findByLogin(userRequest).then((data) => {
-    res.json(data);
-  }).catch((err) => {
-    res.json(500);
-  })
-});
-
+app.post('/user/login', userRouter.login);
+app.post('/user/create', userRouter.create);
 
 const PORT = process.env.port || 3000;
 
