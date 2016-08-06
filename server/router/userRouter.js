@@ -11,6 +11,7 @@ const login = (req, res) => {
 
 const create  = (req, res) => {
   const user = {login:req.body.login, password: req.body.password, name: req.body.name};
+  serviceUser.create(user);
   console.log(serviceUser.create(user));
   res.json(201);
 }

@@ -2,6 +2,7 @@ const farmaService = require('../services/farmaService');
 
 const create = (req, res) => {
   const farma = {login:req.body.login, password: req.body.password, name: req.body.name};
+  farmaService.create(farma);
   res.json(201);
 }
 
