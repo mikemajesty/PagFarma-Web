@@ -3,7 +3,7 @@
 
   angular.module("lodash", []).constant("_", _);
 
-  angular.module("PagFarma", ["ngRoute", "ui.utils.masks", "ngMessages", "lodash"])
+  angular.module("Gs1", ["ngRoute", "ui.utils.masks", "ngMessages", "lodash"])
 
   .constant("API", "/api")
   .constant("VIEW_PATH", "/view")

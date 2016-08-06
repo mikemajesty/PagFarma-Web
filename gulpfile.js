@@ -68,9 +68,18 @@ gulp.task('pug', () =>
     .pipe(gulp.dest('dist/'))
 );
 
-gulp.task('js', () => {
-
-});
+gulp.task('js', () =>
+  gulp.src([
+    'client/js/**/*.js',
+    'client/js/app.js'
+  ])
+    .pipe(concat('all.min.js'))
+    .pipe(babel({
+      presets: ['es2015']
+    }))
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/js'))
+);
 
 gulp.task('watch', () => {
   // const server = gls('server/server.js', {
@@ -84,7 +93,7 @@ gulp.task('watch', () => {
    });
 
   gulp.watch('client/**/*.js', ['js']);
-  gulp.watch('client/**/*.js', ['sass']);
+  gulp.watch('client/**/*.scss', ['sass']);
   gulp.watch('client/**/*.pug', ['pug']);
   gulp.watch('dist/**/*.{css,html,js}').on('change', browserSync.reload);
 
