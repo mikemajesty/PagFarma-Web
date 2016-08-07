@@ -11,7 +11,7 @@ const getProduct = (code) => {
 
   var formData = querystring.stringify(form);
 
-  const opntions =
+  const options =
   {
     url: 'http://inbar-producao-WS.azurewebsites.net/search',
     method: 'POST',
@@ -25,7 +25,7 @@ const getProduct = (code) => {
     json: true
   }
 
-  return rp(opntions)
+  return rp(options)
     .then(function (htmlString) {
         return htmlString;
     })
