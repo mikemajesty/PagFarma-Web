@@ -6,7 +6,7 @@ const login = (req, res) => {
     res.json(data);
   }).catch((err) => {
     res.json(500);
-  })
+  });
 };
 
 const create  = (req, res) => {

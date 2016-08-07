@@ -19,7 +19,8 @@ app.post('/farma/create', farmaRouter.create);
 app.post('/farma/login', farmaRouter.login);
 
 // SOLICITATION
-app.post('/solicitation/create', solicitationRouter.create);
+app.post('/order/create', solicitationRouter.create);
+app.get('/order/', solicitationRouter.findAll);
 
 // GS1 API
 app.get('/getProduct', gs1.getProduct);

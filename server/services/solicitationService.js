@@ -22,14 +22,17 @@ const create = (data) => {
   });
 }
 
-const findOne = (solicitation) => {
-  return Solicitation.findOne({
+const findAll = (solicitation) => {
+  return Solicitation.findAll({
+    include: [{
+      model: Medicine,
+      as: 'medicines'
+    }],
     where: solicitation
   });
 }
 
-
 module.exports = {
   create,
-  findOne
+  findAll
 }
