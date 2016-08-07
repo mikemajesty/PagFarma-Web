@@ -1,14 +1,15 @@
 const solicitationService = require('../services/solicitationService');
 
 const create = (req, res) => {
-  const data = {userId: req.body.userId, codigos: req.body.codigos};
+  const data = {userId: req.body.userId, medicines: req.body.medicines};
+  console.log(data);
   solicitationService.create(data);
   res.json(201);
 }
 
 const findAll = (req, res) => {
-  const status = req.query.status;
-  return solicitationService.findAll({status: status})
+  const userId = req.query.userId;
+  return solicitationService.findAll({userId: userId})
     .then((data) => {
       res.json(data);
     }).catch((err) => {

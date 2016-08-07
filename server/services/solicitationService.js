@@ -12,12 +12,11 @@ const Budget = modelBudget.Budget;
 const create = (data) => {
   solicitation = Solicitation.build();
   solicitation.userId = data.userId;
-
   solicitation.save().then(function(solicitation) {
-    data.codigos.forEach((codigo) => {
-      medicine = Medicine.build({code: codigo});
-      medicine.solicitationId = solicitation.id;
-      medicine.save();
+    data.medicines.forEach((medicine) => {
+      medicineModel = Medicine.build({code: medicine.code, quantity: medicine.quantity});
+      medicineModel.solicitationId = solicitation.id;
+      medicineModel.save();
     });
   });
 }
