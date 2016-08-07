@@ -8,8 +8,8 @@ const create = (req, res) => {
 }
 
 const findAll = (req, res) => {
-  const userId = req.query.userId;
-  return solicitationService.findAll({userId: userId})
+  const status = req.query.status;
+  return solicitationService.findAll({status: status})
     .then((data) => {
       res.sendStatus(data);
     }).catch((err) => {
@@ -18,8 +18,8 @@ const findAll = (req, res) => {
 }
 
 const findAllBudget = (req, res) => {
-  const status = req.query.status;
-  return solicitationService.findAllBudget({status: status})
+  const userId = req.query.userId;
+  return solicitationService.findAllBudget({userId: userId})
     .then((data) => {
       res.sendStatus(data);
     }).catch((err) => {

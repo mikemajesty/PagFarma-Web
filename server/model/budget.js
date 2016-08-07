@@ -3,7 +3,8 @@ const Sequelize = require('../data/database').Sequelize;
 const Farma = require('./farma').Farma;
 
 const Budget = sequelize.define('budget', {
-  value: Sequelize.DECIMAL
+  value: Sequelize.DECIMAL,
+  status: {Sequelize.STRING, defaultValue: "NOT APROVED"}
 });
 
 Budget.belongsTo(Farma);
