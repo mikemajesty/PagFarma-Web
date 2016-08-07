@@ -17,7 +17,14 @@ const findByLogin = (user) => {
   });
 }
 
+const findAll = (farmacia) => {
+  return modelFarma.Farma.findAll({
+    where: farmacia
+  });
+}
+
 module.exports = {
   create,
-  findByLogin
+  findByLogin,
+  findAll
 }

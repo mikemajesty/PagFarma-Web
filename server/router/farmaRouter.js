@@ -15,7 +15,19 @@ const login = (req, res) => {
   })
 }
 
+const findAll = (req, res) => {
+  const farmaId = req.query.farmaId;
+  console.log(farmaId);
+  return farmaService.findAll({id: farmaId})
+    .then((data) => {
+      res.json(data);
+    }).catch((err) => {
+      res.sendStatus(500);
+    });
+}
+
 module.exports = {
   create,
-  login
+  login,
+  findAll
 }

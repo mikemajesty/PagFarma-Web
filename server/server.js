@@ -20,6 +20,7 @@ app.post('/user/create', userRouter.create);
 // LOGIN/FARMA
 app.post('/farma/create', farmaRouter.create);
 app.post('/farma/login', farmaRouter.login);
+app.get('/farma/', farmaRouter.findAll);
 
 // SOLICITATION
 app.post('/order/create', solicitationRouter.create);
