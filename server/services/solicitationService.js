@@ -14,7 +14,7 @@ const create = (data) => {
   solicitation.userId = data.userId;
   solicitation.save().then(function(solicitation) {
     data.medicines.forEach((medicine) => {
-      medicineModel = Medicine.build({code: medicine.code, quantity: medicine.quantity});
+      medicineModel = Medicine.build({code: medicine.code, quantity: medicine.quantity, nome: medicine.nome, marca: medicine.marca});
       medicineModel.solicitationId = solicitation.id;
       medicineModel.save();
     });
