@@ -3,13 +3,13 @@ const Sequelize = require('../data/database').Sequelize;
 const farmaModel = require('./farma').Farma;
 const solicitation = require('./solicitation').Solicitation;
 
-const Badget = sequelize.define('badget', {
+const Budget = sequelize.define('budget', {
   value: Sequelize.DECIMAL
 });
 
-Badget.hasOne(farmaModel, {as: 'farmacies'})
-Badget.hasOne(solicitation, {as : 'solicitations'});
+Budget.hasOne(farmaModel, {as: 'farmacies'})
+Budget.hasOne(solicitation, {as : 'solicitations'});
 
 module.exports = {
-  Badget
+  Budget
 }

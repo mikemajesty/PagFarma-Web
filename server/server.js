@@ -7,7 +7,7 @@ const farmaRouter = require('./router/farmaRouter');
 const solicitationRouter = require('./router/solicitationRouter');
 const gs1 = require('./router/gs1Router');
 const product = require('./router/productRouter');
-
+const budget = require('./router/budgetRouter')
 app.use(parser());
 
 // LOGIN/USER
@@ -25,6 +25,8 @@ app.get('/getProduct', gs1.getProduct);
 
 // PRODUCT
 app.post('/product/create', product.create);
+
+app.post('/budget/create', budget.create)
 
 const PORT = process.env.port || 3000;
 
