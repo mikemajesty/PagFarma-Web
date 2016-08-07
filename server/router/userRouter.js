@@ -5,14 +5,14 @@ const login = (req, res) => {
   serviceUser.findByLogin(userRequest).then((data) => {
     res.json(data);
   }).catch((err) => {
-    res.json(500);
-  })
+    res.sendStatus(500);
+  });
 };
 
 const create  = (req, res) => {
   const user = {login:req.body.login, password: req.body.password, name: req.body.name};
   serviceUser.create(user);
-  res.json(201);
+  res.sendStatus(201);
 }
 
 

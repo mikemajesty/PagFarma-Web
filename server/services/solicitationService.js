@@ -2,34 +2,51 @@ const sequelize = require('../data/database').sequelize;
 
 const modelSolicitation = require('../model/solicitation');
 const modelMedicine = require('../model/medicine');
+const modelBudget = require('../model/budget');
 
 const Medicine = modelMedicine.Medicine;
-const Solicitation = modelSolicitation.Solicitation
+const Solicitation = modelSolicitation.Solicitation;
+const Budget = modelBudget.Budget;
 
 
 const create = (data) => {
   solicitation = Solicitation.build();
   solicitation.userId = data.userId;
-
   solicitation.save().then(function(solicitation) {
-    console.log(data);
-    data.codigos.forEach((codigo) => {
-      console.log(codigo);
-      medicine = Medicine.build({code: codigo});
-      medicine.solicitationId = solicitation.id;
-      medicine.save();
+    data.medicines.forEach((medicine) => {
+      medicineModel = Medicine.build({code: medicine.code, quantity: medicine.quantity});
+      medicineModel.solicitationId = solicitation.id;
+      medicineModel.save();
     });
   });
 }
 
-const findOne = (solicitation) => {
-  return Solicitation.findOne({
+const findAll = (solicitation) => {
+  return Solicitation.findAll({
+    include: [{
+      model: Medicine,
+      as: 'medicines'
+    }],
     where: solicitation
   });
 }
 
+const findAllBudget = (solicitation) => {
+  return Solicitation.findAll({
+    include: [{
+      model: Medicine,
+      as: 'medicines'
+     },
+     {
+       model: Budget,
+       as: 'budgets'
+     }],
+    where: solicitation
+  });
+}
 
 module.exports = {
   create,
-  findOne
+  findAll,
+  findAllBudget
 }

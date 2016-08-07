@@ -1,8 +1,9 @@
-var request = require('request');
-var querystring = require('querystring');
-var rp = require('request-promise');
+const request = require('request');
+const querystring = require('querystring');
+const rp = require('request-promise');
 
 const getProduct = (code) => {
+
   var form = {
     "code": code,
     "codeType": "GTIN"
@@ -10,7 +11,9 @@ const getProduct = (code) => {
 
   var formData = querystring.stringify(form);
 
-  const opntions =  {url: 'http://inbar-producao-WS.azurewebsites.net/search',
+  const options =
+  {
+    url: 'http://inbar-producao-WS.azurewebsites.net/search',
     method: 'POST',
     headers: {
       'secret': 'c851cb04-58ca-4e69-b225-b4cee77d4784',
@@ -22,15 +25,13 @@ const getProduct = (code) => {
     json: true
   }
 
-  return rp(opntions)
+  return rp(options)
     .then(function (htmlString) {
         return htmlString;
     })
     .catch(function (err) {
-        console.log(err);
+        throw err;
     });
-
-
 }
 
 module.exports = {
