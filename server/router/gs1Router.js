@@ -4,7 +4,7 @@ const productService = require('../services/productService');
 const getProduct = (req, res) => {
   const code = req.query.code;
   productService.findOne({code: code}).then((data) => {
-    res.json(data.get());
+    res.sendStatus(data.get());
   });
   // gs1.getProduct(code).then((data) => {
   //   if (data) {
@@ -23,13 +23,13 @@ const getProduct = (req, res) => {
   //
   //
   //     productService.create(resp);
-  //     res.json(resp);
+  //     res.sendStatus(resp);
   //   }
-  //   res.json(200);
+  //   res.sendStatus(200);
   // }).catch((err) => {
   //   console.log('wtf', err);
   //   productService.findOne({code: code}).then((data) => {
-  //     res.json(data.get());
+  //     res.sendStatus(data.get());
   //   });
   // });
 }

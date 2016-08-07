@@ -4,16 +4,16 @@ const create = (req, res) => {
   const data = {userId: req.body.userId, medicines: req.body.medicines};
   console.log(data);
   solicitationService.create(data);
-  res.json(201);
+  res.sendStatus(201);
 }
 
 const findAll = (req, res) => {
   const userId = req.query.userId;
   return solicitationService.findAll({userId: userId})
     .then((data) => {
-      res.json(data);
+      res.sendStatus(data);
     }).catch((err) => {
-      res.json(500);
+      res.sendStatus(500);
     });
 }
 
@@ -21,10 +21,10 @@ const findAllBudget = (req, res) => {
   const status = req.query.status;
   return solicitationService.findAllBudget({status: status})
     .then((data) => {
-      res.json(data);
+      res.sendStatus(data);
     }).catch((err) => {
       console.log(err);
-      res.json(500);
+      res.sendStatus(500);
     });
 }
 
