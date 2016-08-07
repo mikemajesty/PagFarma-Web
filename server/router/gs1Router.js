@@ -1,8 +1,8 @@
 const gs1 = require('../services/gs1Service');
 
-
 const getProduct = (req, res) => {
-  gs1.getProduct(req.body).then((data) => {
+  console.log(req.query.code);
+  gs1.getProduct(req.query.code).then((data) => {
     res.json(data);
   });
 }

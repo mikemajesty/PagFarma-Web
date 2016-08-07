@@ -2,9 +2,9 @@ var request = require('request');
 var querystring = require('querystring');
 var rp = require('request-promise');
 
-const getProduct = (data) => {
+const getProduct = (code) => {
   var form = {
-    "code": data.code,
+    "code": code,
     "codeType": "GTIN"
   };
 
