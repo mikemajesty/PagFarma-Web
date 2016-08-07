@@ -25,13 +25,15 @@ app.post('/farma/login', farmaRouter.login);
 app.post('/order/create', solicitationRouter.create);
 app.get('/order/', solicitationRouter.findAll);
 
+app.get('/order/budget', solicitationRouter.findAllBudget);
+
 // GS1 API
 app.get('/getProduct', gs1.getProduct);
 
 // PRODUCT
 app.post('/product/create', product.create);
 
-app.post('/budget/create', budget.create)
+app.post('/budget/create', budget.create);
 
 const PORT = process.env.port || 3000;
 
