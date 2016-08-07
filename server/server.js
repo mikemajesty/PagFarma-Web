@@ -6,6 +6,7 @@ const userRouter = require('./router/userRouter');
 const farmaRouter = require('./router/farmaRouter');
 const solicitationRouter = require('./router/solicitationRouter');
 const gs1 = require('./router/gs1Router');
+const product = require('./router/productRouter');
 
 app.use(parser());
 
@@ -20,7 +21,10 @@ app.post('/farma/login', farmaRouter.login);
 app.post('/solicitation/create', solicitationRouter.create);
 
 // GS1 API
-app.get('/getProduct',gs1.getProduct);
+app.get('/getProduct', gs1.getProduct);
+
+// PRODUCT
+app.post('/product/create', product.create);
 
 const PORT = process.env.port || 3000;
 

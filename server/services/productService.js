@@ -13,10 +13,11 @@ const findOne = (data) => {
   return modelProduct.Product.findOne({
     where: {code: data.code}
   }).then((data) => {
-    return data.get();
+    return data;
   });
 }
 
 module.exports = {
-  create
+  create,
+  findOne
 }
