@@ -9,6 +9,7 @@ const gs1 = require('./router/gs1Router');
 const product = require('./router/productRouter');
 const solicitationRouter = require('./router/solicitationRouter');
 const userRouter = require('./router/userRouter');
+const paymentRouter = require('./router/paymentRouter');
 
 sequelize.sync();
 
@@ -53,6 +54,8 @@ app.get('/getProduct', gs1.getProduct);
 app.post('/product/create', product.create);
 
 app.post('/budget/create', budget.create);
+
+app.post('/payment', paymentRouter.create);
 
 const PORT = process.env.port || 3000;
 
