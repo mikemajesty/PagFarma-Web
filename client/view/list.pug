@@ -1,28 +1,64 @@
 .list
-  h1 orçamentos
+  #popupContainer
+  header
+    h1 Pedidos
 
-  md-card
-    md-toolbar.md-hue-2(flex="noshrink")
-      div.md-toolbar-tools
-        md-button.md-icon-button
-          md-icon(md-svg-icon="image-multiple")
-        h2 Aguardando Proposta
+  section
+    h2 Aguardando Orçamento
+    ul.budget-list
+      li.budget.white(ng-repeat="budget in $ctrl.pending" ng-click="budget.showForm = true")
+        .top-info
+          h3
+            span Cliente
+            span {{ budget.user }}
+        .tile
+          p data limite: {{ budget.deadline }} às 13h00
+        .products
+          h3 lista de produtos
+          ul
+            li(ng-repeat="product in budget.products")
+              h4
+                span {{ product.quantity }}x {{ product.name }} ({{ product.brand }})
+        form.bottom-form(ng-if="budget.showForm" submit="$ctrl.proposeBudget({{ budget.id }})")
+          md-input-container
+            label Preço
+            input(ng-model="price", name="text", ui-money-mask="2", min="0", required)
+          md-button.md-raised(type="submit") Enviar
 
-  md-card
-    md-table-container
-      table(md-table)
-        thead(md-head)
-          tr(md-row)
-            th(md-column) Cliente
-            th(md-column) Status
-            th(md-column) Data Limite
-            th(md-column, width="30") Ações
-        tbody(md-body)
-          tr(md-row, ng-repeat="budget in $ctrl.budgets")
-            td(md-cell) {{ budget.user }}
-            td(md-cell) {{ budget.status }}
-            td(md-cell) {{ budget.deadline }}
-            td.md-icon-cell(md-cell)
-              md-button.md-icon-button()
-                md-tooltip Editar banner
-                md-icon(md-svg-icon="pencil-box-outline", size="24")
+  section
+    h2 Aceitos
+    ul.budget-list
+      li.budget.green(ng-repeat="budget in $ctrl.accepted" ng-click="budget.retrieved = true" ng-if="!budget.retrieved")
+        .top-info
+          h3
+            span Cliente
+            span {{ budget.user }}
+        .tile
+          p código de retirada: {{ budget.code }}
+        .tile(ng-if="budget.retrieved")
+          p este pedido foi retirado
+        .products
+          h3 lista de produtos
+          ul
+            li(ng-repeat="product in budget.products")
+              h4
+                span {{ product.quantity }}x {{ product.name }} ({{ product.brand }})
+
+  section
+    h2 Orçamentos Recusados
+    ul.budget-list
+      li.budget.red(ng-repeat="budget in $ctrl.refused")
+        .top-info
+          h3
+            span Cliente
+            span {{ budget.user }}
+        .tile
+          p comprado por: {{ budget.bought_for }}
+        .tile
+          p você ofereceu: {{ budget.your_offer }}
+        .products
+          h3 lista de produtos
+          ul
+            li(ng-repeat="product in budget.products")
+              h4
+                span {{ product.quantity }}x {{ product.name }} ({{ product.brand }})

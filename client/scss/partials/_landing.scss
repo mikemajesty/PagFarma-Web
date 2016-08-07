@@ -36,9 +36,14 @@
   }
 
   footer {
-    min-height: 10vh;
+    min-height: 15vh;
     background-color: $main-color;
-    padding: 2.5vh 5%;
+    padding: 0 5%;
+    display: flex;
+
+    div {
+      margin: auto;
+    }
   }
 
   footer p {

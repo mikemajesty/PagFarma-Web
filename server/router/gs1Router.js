@@ -4,7 +4,7 @@ const productService = require('../services/productService');
 const getProduct = (req, res) => {
   const code = req.query.code;
   productService.findOne({code: code}).then((data) => {
-    res.sendStatus(data.get());
+    res.json(data.get());
   });
   // gs1.getProduct(code).then((data) => {
   //   if (data) {

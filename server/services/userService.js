@@ -2,11 +2,8 @@ const sequelize = require('../data/database').sequelize;
 const modelUser = require('../model/user');
 
 const create = (data) => {
-  sequelize.sync().then(() => {
-     return modelUser.User.create(data).then( (data) => {
-       return data.get();
-     });;
-   })
+  sequelize.sync();
+   return modelUser.User.create(data);
 }
 
 const findByLogin = (user) => {

@@ -11,7 +11,7 @@ const findAll = (req, res) => {
   const status = req.query.status;
   return solicitationService.findAll({status: status})
     .then((data) => {
-      res.sendStatus(data);
+      res.json(data);
     }).catch((err) => {
       res.sendStatus(500);
     });
@@ -21,7 +21,7 @@ const findAllBudget = (req, res) => {
   const userId = req.query.userId;
   return solicitationService.findAllBudget({userId: userId})
     .then((data) => {
-      res.sendStatus(data);
+      res.json(data);
     }).catch((err) => {
       console.log(err);
       res.sendStatus(500);

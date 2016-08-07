@@ -11,8 +11,9 @@ const login = (req, res) => {
 
 const create  = (req, res) => {
   const user = {login:req.body.login, password: req.body.password, name: req.body.name};
-  serviceUser.create(user);
-  res.sendStatus(201);
+  serviceUser.create(user).then((data) => {
+      res.send(200, {"id": data.id});
+  });
 }
 
 
