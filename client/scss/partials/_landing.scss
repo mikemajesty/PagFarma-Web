@@ -3,35 +3,56 @@
     min-height: 85vh;
     background-color: #333;
     display: flex;
+    flex-flow: column;
     background-image: url('../img/bg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+  }
 
-    h1 {
-      color: $main-color;
-      margin: auto;
-    }
+  h1 {
+    color: $main-color;
+    margin: auto;
+  }
+
+  form {
+    width: 90vw;
+    max-width: 300px;
+    margin: 1rem auto auto auto;
+    padding: 1rem;
+    background-color: rgba(#FFF, .6);
+    border-radius: 2px;
+  }
+
+  md-input-container {
+    display: block;
+  }
+
+  button {
+    width: 100%;
+    margin: 0;
+    background-color: darken($main-color, 20%) !important;
+    font-weight: bold;
   }
 
   footer {
     min-height: 10vh;
     background-color: $main-color;
     padding: 2.5vh 5%;
+  }
 
-    p {
-      color: darken($main-color, 20%);
-      text-align: center;
+  footer p {
+    color: darken($main-color, 20%);
+    text-align: center;
 
-      &:first-of-type {
-        font-weight: bold;
-        font-size: 1.1rem;
-        margin-bottom: .25rem;
-      }
+    &:first-of-type {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: .25rem;
+    }
 
-      &:last-of-type {
-        font-size: 0.9rem;
-      }
+    &:last-of-type {
+      font-size: 0.9rem;
     }
   }
 }

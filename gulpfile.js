@@ -34,7 +34,6 @@ gulp.task('csslibs', () => {
     'bower_components/angular-material/angular-material.min.css',
     'bower_components/angular-material-data-table/dist/md-data-table.min.css',
     'bower_components/angular-material-icons/angular-material-icons.css',
-    'bower_components/material-design-icons/iconfont/material-icons.css',
     'bower_components/mdPickers/dist/mdPickers.min.css',
   ])
     .pipe(concat('libs.css'))
@@ -44,7 +43,6 @@ gulp.task('csslibs', () => {
 gulp.task('jslibs', () =>
   gulp.src([
     'bower_components/jquery/dist/jquery.min.js',
-    'bower_components/js-xlsx/dist/xlsx.full.min.js',
     'bower_components/lodash/dist/lodash.min.js',
     'bower_components/moment/min/moment.min.js',
     'bower_components/moment/locale/pt-br.js',
@@ -54,7 +52,6 @@ gulp.task('jslibs', () =>
     'bower_components/angular-animate/angular-animate.min.js',
     'bower_components/angular-messages/angular-messages.min.js',
     'bower_components/angular-aria/angular-aria.min.js',
-    'bower_components/angular-jwt/dist/angular-jwt.min.js',
     'bower_components/angular-material/angular-material.min.js',
     'bower_components/angular-material-data-table/dist/md-data-table.min.js',
     'bower_components/md-form-validator/dist/md-form-validator.min.js',
