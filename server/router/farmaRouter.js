@@ -8,7 +8,6 @@ const create = (req, res) => {
 
 const login = (req, res) => {
   const farmaRequest = {login: req.body.login, password: req.body.password};
-  console.log("wtf",farmaRequest);
   farmaService.findByLogin(farmaRequest).then((data) => {
     res.json(data);
   }).catch((err) => {

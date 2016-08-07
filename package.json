@@ -29,6 +29,9 @@
     "pg": "^6.0.1",
     "pg-native": "^1.10.0",
     "pug": "^2.0.0-beta3",
+    "querystring": "^0.2.0",
+    "request": "^2.74.0",
+    "request-promise": "^4.1.0",
     "sequelize": "^3.23.3"
   },
   "devDependencies": {
