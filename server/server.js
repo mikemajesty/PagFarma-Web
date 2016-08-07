@@ -13,7 +13,7 @@ app.use(parser());
 // LOGIN/USER
 app.post('/user/login', userRouter.login);
 app.post('/user/create', userRouter.create);
-// FARMA
+// LOGIN/FARMA
 app.post('/farma/create', farmaRouter.create);
 app.post('/farma/login', farmaRouter.login);
 
