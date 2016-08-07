@@ -6,11 +6,10 @@ const Medicine = modelMedicine.Medicine;
 
 const Solicitation = sequelize.define('solicitation', {
   datePayment: Sequelize.DATE,
-  status: Sequelize.STRING
+  status: {type: Sequelize.STRING, defaultValue: "WAITING"},
 });
 
 Solicitation.hasMany(Medicine, {as: 'medicines'});
-sequelize.sync();
 
 module.exports = {
   Solicitation

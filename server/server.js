@@ -4,6 +4,7 @@ const parser = require('body-parser');
 
 const userRouter = require('./router/userRouter');
 const farmaRouter = require('./router/farmaRouter');
+const solicitationRouter = require('./router/solicitationRouter');
 
 app.use(parser());
 
@@ -12,7 +13,9 @@ app.post('/user/login', userRouter.login);
 app.post('/user/create', userRouter.create);
 // FARMA
 app.post('/farma/create', farmaRouter.create);
-app.post('/farma/login', farmaRouter.login)
+app.post('/farma/login', farmaRouter.login);
+
+app.post('/solicitation/create', solicitationRouter.create);
 
 const PORT = process.env.port || 3000;
 

@@ -7,22 +7,17 @@ const Medicine = modelMedicine.Medicine;
 const Solicitation = modelSolicitation.Solicitation
 
 
-const createSolicitation = (data) => {
-  solicitation = Solicitation.build({status: 'outro teste'});
-  medicine = Medicine.build({code: 'qualquer um'});
+const create = (data) => {
+  solicitation = Solicitation.build();
+  solicitation.userId = data.userId;
 
   solicitation.save().then(function(solicitation) {
-
-    medicine.solicitationId = solicitation.id;
-    medicine.save().then(function(medicine) {
-
-      console.log("cadastrou medicina");
-      solicitation.getMedicines().then(function(medicines) {
-        console.log(medicines[0].dataValues);
-      });
-
-    }).catch(function(){
-      console.log("nao cadastrou medicina");
+    console.log(data);
+    data.codigos.forEach((codigo) => {
+      console.log(codigo);
+      medicine = Medicine.build({code: codigo});
+      medicine.solicitationId = solicitation.id;
+      medicine.save();
     });
   });
 }
@@ -33,12 +28,8 @@ const findOne = (solicitation) => {
   });
 }
 
-findOne({id: 1}).then((solicitation) => {
-  console.log(solicitation.get());
-});
-
 
 module.exports = {
-  createSolicitation,
+  create,
   findOne
 }
