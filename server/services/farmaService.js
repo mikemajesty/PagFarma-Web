@@ -10,6 +10,7 @@ const create = (data) => {
 }
 
 const findByLogin = (user) => {
+  console.log('wtf2',user);
   return modelFarma.Farma.findOne({
     where: {login: user.login, password: user.password}
   }).then((data) => {
