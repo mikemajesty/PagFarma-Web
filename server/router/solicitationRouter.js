@@ -6,6 +6,17 @@ const create = (req, res) => {
   res.json(201);
 }
 
+const findAll = (req, res) => {
+  const status = req.query.status;
+  return solicitationService.findAll({status: status})
+    .then((data) => {
+      res.json(data);
+    }).catch((err) => {
+      res.json(500);
+    });
+}
+
 module.exports = {
-  create
+  create,
+  findAll
 }
