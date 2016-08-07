@@ -1,7 +1,7 @@
 const solicitationService = require('../services/solicitationService');
 
 const create = (req, res) => {
-  const data = {userId: req.body.userId, medicines: req.body.medicines};
+  const data = {userId: req.body.userId, medicines: req.body.medicines, nome: req.body.nome, marca:req.body.marca };
   console.log(data);
   solicitationService.create(data);
   res.sendStatus(201);

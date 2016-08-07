@@ -39,7 +39,8 @@ const findAllBudget = (solicitation) => {
      },
      {
        model: Budget,
-       as: 'budgets'
+       as: 'budgets',
+       include: []
      }],
     where: solicitation
   });
