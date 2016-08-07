@@ -1,13 +1,16 @@
 const express = require('express');
 const app = express();
 const parser = require('body-parser');
+const sequelize = require('./data/database').sequelize;
 
 const budget = require('./router/budgetRouter');
-const userRouter = require('./router/userRouter');
 const farmaRouter = require('./router/farmaRouter');
-const solicitationRouter = require('./router/solicitationRouter');
 const gs1 = require('./router/gs1Router');
 const product = require('./router/productRouter');
+const solicitationRouter = require('./router/solicitationRouter');
+const userRouter = require('./router/userRouter');
+
+sequelize.sync();
 
 app.use(parser());
 

@@ -7,8 +7,8 @@ const Budget = sequelize.define('budget', {
   value: Sequelize.DECIMAL
 });
 
-Budget.hasOne(Farma);
-Budget.hasOne(Solicitation);
+Budget.belongsTo(Farma);
+Budget.belongsTo(Solicitation);
 
 module.exports = {
   Budget

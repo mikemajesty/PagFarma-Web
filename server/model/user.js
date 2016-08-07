@@ -11,7 +11,7 @@ const User = sequelize.define('user', {
 });
 
 User.hasMany(Solicitation, {as: 'solicitations'});
-sequelize.sync();
+
 
 module.exports = {
   User
