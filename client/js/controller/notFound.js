@@ -4,7 +4,7 @@
   .controller('NotFoundCtrl', [NotFoundCtrl]);
 
   function NotFoundCtrl() {
-    console.log('notfoundctrl');
+    console.log('notFoundCtrl');
   }
 
 })(angular);

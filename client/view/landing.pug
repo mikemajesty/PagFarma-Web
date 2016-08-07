@@ -1,7 +1,24 @@
 .landing
   header
     h1 PagFarma
-    md-button.md-icon-button entrar
+
+    form(md-form-validator, ng-submit="$ctrl.login()", novalidate)
+      md-input-container
+        label Email
+        input(ng-model="user.email", name="email", required)
+        //- md-messages
+        //-   md-message(required) Digite seu email
+
+      md-input-container
+        label Senha
+        input(ng-model="user.password", name="password", type="password", required)
+        //- md-messages
+        //-   md-message(required) Digite sua senha
+
+      md-button.md-raised(type="button", ng-if="state == 'recover'", ng-click="setState('login')") Cancelar
+      md-button.md-raised.md-accent(type="submit") Entrar
+      p(ng-if="$ctrl.error") {{ $ctrl.error }}
+
 
   footer
     p &copy; PagFarma 2016.
