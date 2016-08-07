@@ -5,7 +5,7 @@ const create = (data) => {
   sequelize.sync().then(() => {
      return modelBudget.Budget.create(data).then( (data) => {
        return data.get();
-     });;
+     });
    })
 }
 
