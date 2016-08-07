@@ -1,0 +1,238 @@
+.list {
+  header {
+    min-height: 15vh;
+    background-color: #333;
+    display: flex;
+    flex-flow: column;
+    background-image: url('../img/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  h1 {
+    color: $main-color;
+    margin: auto;
+  }
+
+  h2 {
+    color: #444;
+    margin: auto auto 1rem auto;
+  }
+
+  form {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  md-input-container {
+    display: block;
+  }
+
+  button {
+    width: 100%;
+    margin: 0;
+    background-color: darken($main-color, 20%) !important;
+    font-weight: bold;
+    color: #fff !important;
+  }
+
+  section {
+    padding: 5rem 5vw 10rem;
+    background-color: lighten($main-color, 50%);
+    background-image: url('../img/bg-white.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+
+    &:after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255,255,255,.6);
+      content: '';
+      z-index: -1;
+    }
+  }
+
+  .budget-list {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .budget {
+    width: 90vw;
+    max-width: 240px;
+    margin: .5rem auto;
+    border-radius: 4px;
+    transition: all .25s ease;
+    position: relative;
+    cursor: pointer;
+
+    .top-info,
+    ul {
+      padding: 1rem;
+      position: relative;
+    }
+
+    .top-info {
+      padding: 1rem 1rem .5rem 1rem;
+    }
+
+    .products {
+      h3 {
+        font-size: .9rem;
+        padding: 1rem 0 0 1rem;
+      }
+    }
+
+    .bottom-form {
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      border-bottom-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+
+    .tile {
+      padding: .5rem;
+      font-size: .75rem;
+      text-align: center;
+      color: $white;
+      background-color: rgba(0,0,0,.6);
+
+      &:nth-of-type(2) {
+        background-color: rgba(0,0,0,.75);
+      }
+    }
+
+    &:before {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      content: '';
+      opacity: 0;
+      transition: all .25s ease;
+      z-index: 2;
+    }
+
+    &:after {
+      color: #333;
+      position: absolute;
+      content: '';
+      opacity: 0;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: all .25s ease;
+      text-align: center;
+    }
+
+    &.green {
+      background-color: rgba($green,.5);
+
+      .bottom-form {
+        background-color: rgba($green,.5);
+      }
+
+      &:after {
+        content: 'marcar como retirado';
+      }
+
+      &:before {
+        background-color: rgba($green,.9);
+      }
+
+      &:hover {
+        &:before,
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+
+    &.white {
+      background-color: rgba($white,.7);
+
+      .bottom-form {
+        background-color: rgba($white,.7);
+      }
+
+      &:after {
+        content: 'oferecer orçamento';
+      }
+
+      &:before {
+        background-color: rgba($white,.9);
+      }
+
+      &:hover {
+        &:before,
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+
+    &.gray {
+      background-color: rgba($gray,.7);
+
+      &:after {
+        content: 'oferecer orçamento';
+      }
+
+      &:before {
+        background-color: rgba($gray,.9);
+      }
+
+      &:hover {
+        &:before,
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+
+    &.red {
+      background-color: rgba($red,.7);
+      cursor: default;
+
+      h3 {
+        color: #222;
+      }
+
+      &:before {
+        background-color: rgba($red,.85);
+      }
+    }
+  }
+
+  h3,
+  h4 {
+    padding: .6rem;
+    position: relative;
+    font-weight: normal;
+
+    span:first-of-type {
+      font-size: .6rem;
+      position: absolute;
+      top: -.3rem;
+      left: 0;
+      font-weight: bold;
+    }
+  }
+
+  h3 {
+    color: $gray;
+  }
+}
