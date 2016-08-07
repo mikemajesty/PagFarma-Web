@@ -13,10 +13,10 @@ app.post('/user/login', userRouter.login);
 app.post('/user/create', userRouter.create);
 // FARMA
 app.post('/farma/create', farmaRouter.create);
-app.post('/farma/login', farmaRouter.login)
+app.post('/farma/login', farmaRouter.login);
 
 // GS1 API
-app.get('/getProduct',gs1.getProduct)
+app.get('/getProduct',gs1.getProduct);
 
 const PORT = process.env.port || 3000;
 
