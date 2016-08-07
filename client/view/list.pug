@@ -1,0 +1,28 @@
+.list
+  h1 orçamentos
+
+  md-card
+    md-toolbar.md-hue-2(flex="noshrink")
+      div.md-toolbar-tools
+        md-button.md-icon-button
+          md-icon(md-svg-icon="image-multiple")
+        h2 Aguardando Proposta
+
+  md-card
+    md-table-container
+      table(md-table)
+        thead(md-head)
+          tr(md-row)
+            th(md-column) Cliente
+            th(md-column) Status
+            th(md-column) Data Limite
+            th(md-column, width="30") Ações
+        tbody(md-body)
+          tr(md-row, ng-repeat="budget in $ctrl.budgets")
+            td(md-cell) {{ budget.user }}
+            td(md-cell) {{ budget.status }}
+            td(md-cell) {{ budget.deadline }}
+            td.md-icon-cell(md-cell)
+              md-button.md-icon-button()
+                md-tooltip Editar banner
+                md-icon(md-svg-icon="pencil-box-outline", size="24")
