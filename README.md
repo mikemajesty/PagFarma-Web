@@ -14,8 +14,7 @@ It is available under the MIT license.
 **Gabriel Jacquier** &lt;gabrieljacquierme@gmail.com&gt;
 * [mikemajesty](https://github.com/mikemajesty) -
 **Mike Lima** &lt;mikee_2008@hotmail.com&gt;
-* [NatashaHMP](https://github.com/NatashaHMP) -
-**Natasha Matias** &lt;natasham630@gmail.com&gt;
+* [felipebernardes](https://github.com/felipebernardes) -
+**Felipe Bernardes** &lt;bernardes.flp@gmail.com&gt;
 * [celso-wo](https://github.com/celso-wo) -
 **Celso Wo** &lt;celsowo@gmail.com&gt;
-* Natalia Alexandria - natalia_alexandria@hotmail.com
