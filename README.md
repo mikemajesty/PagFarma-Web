@@ -1,7 +1,7 @@
 # PagFarma - A new sales channel between pharmacies and consumers.
 
 
-[![eita.png](https://s24.postimg.org/nsl40ql11/Screen_Shot_2016_12_21_at_10_48_15_PM.png)](https://postimg.org/image/4aqgkso35/ | width=100)
+[![eita.png](https://s24.postimg.org/nsl40ql11/Screen_Shot_2016_12_21_at_10_48_15_PM.png)](https://postimg.org/image/4aqgkso35/)
 
 [![Screen Shot 2016-12-21 at 10.48.33 PM.png](https://s24.postimg.org/l9zf01zat/Screen_Shot_2016_12_21_at_10_48_33_PM.png)](https://postimg.org/image/yqwdix9m9/ =250x250)
 
